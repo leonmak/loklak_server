@@ -5,7 +5,7 @@ applications:
   description: "Distributed Tweet Search Server"
   image: "mariobehling/loklak"
   logo: "https://raw.githubusercontent.com/loklak/loklak_server/master/html/images/loklak_anonymous.png"
-  repository: "https://github.com/loklak/loklak_server.git"
+  repository: "https://github.com/leonmak/loklak_server.git"
   website: "http://loklak.org"
   env:
     JVM: 'openjdk'
