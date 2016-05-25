@@ -31,7 +31,7 @@ stages:
       application: ${CF_APP}
     script: |-
       #!/bin/bash
-      cf push "${CF_APP}" -c "bin/bluemix_start.sh ;sleep 1d" -n "${CF_APP}"
+      cf push "${CF_APP}" -c "bin/heroku_start.sh ;sleep 1d" -n "${CF_APP}"
 
       # View logs
       #cf logs "${CF_APP}" --recent
