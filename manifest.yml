@@ -7,3 +7,5 @@ applications:
   logo: "https://raw.githubusercontent.com/loklak/loklak_server/master/html/images/loklak_anonymous.png"
   repository: "https://github.com/loklak/loklak_server.git"
   website: "http://loklak.org"
+  JBP_CONFIG_IBMJDK: "version: 1.8.+"
+

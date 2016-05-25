@@ -28,38 +28,6 @@ if [ -n "$CUSTOMXmx" ]; then cmdline="$cmdline -Xmx$CUSTOMXmx";
 elif [ -n "$DFAULTXmx" ]; then cmdline="$cmdline -Xmx$DFAULTXmx";
 fi
 
-
-#jdk8
-
-JAVA_DIST="openjdk1.8.0_51"
-JDK8_URL="http://lang-jvm.s3.amazonaws.com/jdk/${JAVA_DIST}-cedar14.tar.gz"
-
-if [ -d .jdk8 ]; then
-  echo "-----> .jdk8 folder found, moving along."
-
-else
-  echo -n "-----> .jdk8 folder not found! "
-  if [[ -d "$PWD/.jdk8" ]]; then
-    echo -n "Copying jdk from cache to app... "
-    cp -r "$PWD/.jdk8" "$PWD"
-    echo "Done!"
-
-  else
-    echo -n "-----> Installing ${JAVA_DIST} build (to .jdk8)....."
-    mkdir "$PWD/.jdk8"
-    cd "$PWD/.jdk8"
-    curl --max-time 180 --location "$JDK8_URL" | tar xz
-    cd "$PWD"
-    echo "Done!"
-  fi
-fi
-
-cd $PWD
-
-export JAVA_HOME="$PWD/.jdk8"
-export PATH="$JAVA_HOME/bin:$PATH"
-
-
 echo "starting loklak"
 
 cmdline="$cmdline -server -classpath $CLASSPATH org.loklak.LoklakServer";
